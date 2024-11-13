@@ -1,0 +1,213 @@
+/* General Styles */
+:root {
+  --primary-color: #28a745;
+  --primary-hover: #218838;
+  --transition-speed: 0.3s;
+}
+
+/* Navbar Styles */
+.navbar {
+  transition: all var(--transition-speed) ease;
+}
+
+.navbar-brand img {
+  transition: transform var(--transition-speed);
+}
+
+.navbar-brand:hover img {
+  transform: scale(1.05);
+}
+
+/* Navigation Links */
+.nav-link {
+  position: relative;
+  transition: color var(--transition-speed);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width var(--transition-speed);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Search Bar */
+.form-control {
+  transition: box-shadow var(--transition-speed);
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Cart Button */
+.btn-outline-success {
+  transition: all var(--transition-speed);
+}
+
+.btn-outline-success:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Badge Animation */
+.badge {
+  animation: badge-pulse 1.5s infinite;
+}
+
+@keyframes badge-pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.1); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+  animation: dropdown-fade 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@keyframes dropdown-fade {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-item {
+  transition: all var(--transition-speed);
+}
+
+.dropdown-item:hover {
+  background-color: rgba(40, 167, 69, 0.1);
+  padding-left: 1.5rem;
+}
+
+/* Product Cards */
+.card {
+  transition: all var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card img {
+  transition: transform var(--transition-speed);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+  }
+
+  .navbar-nav {
+    margin-bottom: 1rem !important;
+  }
+
+  .form-control {
+    margin-bottom: 1rem;
+  }
+
+  .d-flex {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .btn-outline-success {
+    margin: 0.5rem 0;
+  }
+
+  .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    padding-left: 1rem;
+  }
+}
+
+/* Loading Animations */
+.loading-skeleton {
+  animation: skeleton-loading 1s infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  from { background-color: #f0f0f0; }
+  to { background-color: #e0e0e0; }
+}
+
+/* Cart Badge Bounce */
+@keyframes cart-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.cart-badge-bounce {
+  animation: cart-bounce 1s infinite;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Footer Hover Effects */
+.footer-link {
+  transition: color var(--transition-speed);
+}
+
+.footer-link:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Social Media Icons */
+.social-icon {
+  transition: transform var(--transition-speed);
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+/* Button Press Effect */
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* Navigation Links - Update this section */
+.nav-link {
+  position: relative;
+  transition: color var(--transition-speed);
+}
+
+/* Remove the underline animation for dropdown toggles */
+.dropdown .nav-link::after {
+  display: none; /* This removes the animated underline */
+}
+
+/* Keep hover effect but without underline for dropdowns */
+.dropdown .nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Add a subtle background effect instead */
+.dropdown-toggle:hover {
+  background-color: rgba(40, 167, 69, 0.1);
+  border-radius: 4px;
+} 
